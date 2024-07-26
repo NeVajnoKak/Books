@@ -1,17 +1,18 @@
-//
-//  BooksApp.swift
-//  Books
-//
-//  Created by Erkebulan Massainov on 26.07.2024.
-//
 
 import SwiftUI
+import SwiftData
 
 @main
 struct BooksApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            BookListView()
+                
         }
+        .modelContainer(for: Book.self)
+    }
+    
+    init() {
+        print(URL.applicationSupportDirectory.path(percentEncoded: false))
     }
 }
